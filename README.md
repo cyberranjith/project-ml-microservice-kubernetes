@@ -23,16 +23,35 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ---
 
+## Description of files in the project
+1. config.yml: Circle CI Config YML file which defines the Circle CI Jobs
+2. app.py: The main flask based application
+3. Dockerfile: Defines the commands to setup and run a docker container
+4. make_prediction.sh: Tests the Sklearn Prediction Home API and gets the home prediction
+5. Makefile: Defines the commands to be executed for setting up a virtual environment, installing dependencies and linting the docker file and python app.
+6. requirements.tx: Defines the dependencies for the python application, which must be referenced for installing them
+7. run_docker.sh: Script to run docker container in local
+8. run_kubernetes.sh: Script to run docker container with kubernetes
+9. upload_docker.sh: Uploads the built docker image of the python application to docker hub repository
+
 ## Setup the Environment
 
 * Create a virtualenv and activate it
 * Run `make install` to install the necessary dependencies
 
+## Pre-requisites to run the app in local
+1. Run Docker Container:
+    - Docker
+2. Run docker container in a Kubernetes cluster:
+    - Kubernetes
+    - Minikube
+    - Kubectl
+
 ### Running `app.py`
 
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+3. Run in Kubernetes:  `minikube start` and then followed by `./run_kubernetes.sh`
 
 ### Kubernetes Steps
 
